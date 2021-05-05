@@ -13,11 +13,6 @@ export default defineConfig({
     },
   },
   base: '/',
-  build: {
-    rollupOptions: {},
-    emptyOutDir: true,
-    outDir: '../server/app/public',
-  },
   server: {
     proxy: Proxy,
   },

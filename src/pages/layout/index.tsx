@@ -1,15 +1,26 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Layout, Menu, Dropdown } from 'antd';
 
 const { Header, Sider, Content } = Layout;
 import styles from './index.module.less';
 import { Routes } from '../../configs/routes';
+import { container } from '../../inversify.config';
+import { USER_SERVICE } from '../../inject-types/inject.types';
+import { User } from '../../inject-types/user.service';
 
 const { SubMenu } = Menu;
 const defaultUserAvatar = 'https://ccms-up-img.gymbo-online.com/up/img/hSLJZ~BQrHZDZ94RjLHpW.png';
 
 const LayoutPage = (props: any) => {
+  const userService = container.get<User>(USER_SERVICE);
+  useEffect(() => {
+    (async () => {
+      await userService.fetchEmojis();
+      console.log(userService.emojis, 'emojis');
+    })();
+  });
+
   const menu = () => {
     return (
       <Menu>

@@ -11,6 +11,7 @@ export interface Route {
   path: string;
   exact?: boolean;
   name: string;
+  hideMenu?: boolean;
   icon?: ReactNode;
   component: React.FC<any>;
   children?: Route[];

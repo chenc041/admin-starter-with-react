@@ -6,19 +6,16 @@ const { Header, Sider, Content } = Layout;
 import styles from './index.module.less';
 import { Routes } from '../../configs/routes';
 import { container } from '../../inversify.config';
-import { USER_SERVICE } from '../../inject-types/inject.types';
-import { User } from '../../inject-types/user.service';
+import { USER_SERVICE } from '../../inject-types/index.types';
+import { UserService } from '../../services/user.service';
 
 const { SubMenu } = Menu;
 const defaultUserAvatar = 'https://ccms-up-img.gymbo-online.com/up/img/hSLJZ~BQrHZDZ94RjLHpW.png';
 
 const LayoutPage = (props: any) => {
-  const userService = container.get<User>(USER_SERVICE);
+  const userService = container.get<UserService>(USER_SERVICE);
   useEffect(() => {
-    (async () => {
-      await userService.fetchEmojis();
-      console.log(userService.emojis, 'emojis');
-    })();
+    userService.fetchEmojis.subscribe((val) => userService.setEmojis(val));
   });
 
   const menu = () => {

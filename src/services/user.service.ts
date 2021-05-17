@@ -1,15 +1,27 @@
-import { injectable } from 'inversify';
-import { User } from '../inject-types/user.service';
-import Axios from 'axios';
+import { inject, injectable } from 'inversify';
+import { HTTP_SERVICE } from '../inject-types/index.types';
+import { HttpService } from '../services/http.service';
+import { Observable, Subject } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @injectable()
-export class UserService implements User {
-  emojis = {} as { [key: string]: any };
+export class UserService {
+  constructor(
+    @inject(HTTP_SERVICE)
+    private readonly httpService: HttpService
+  ) {}
 
-  async fetchEmojis(): Promise<void> {
-    const { status, data } = await Axios.get('https://api.github.com/emojis');
-    if (status === 200) {
-      this.emojis = data;
-    }
+  private emojis: Subject<{ [key: string]: any }> = new Subject();
+
+  get fetchEmojis(): Observable<{ [key: string]: any }> {
+    return this.httpService.get<{ [key: string]: any }>('https://api.github.com/emojis').pipe(map(({ data }) => data));
+  }
+
+  setEmojis(val: { [key: string]: any }) {
+    this.emojis.next(val);
+  }
+
+  get getEmojis() {
+    return this.emojis.asObservable();
   }
 }

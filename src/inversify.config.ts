@@ -1,11 +1,16 @@
+/**
+ * this file is used to manage the DI service with inversify container
+ */
 import { Container } from 'inversify';
+import { USER_SERVICE, HTTP_SERVICE } from './inject-types/index.types';
 import { UserService } from './services/user.service';
-import { USER_SERVICE } from './inject-types/inject.types';
-import { User } from './inject-types/user.service';
+import { HttpService } from './services/http.service';
 
 const container = new Container({
   defaultScope: 'Singleton',
 });
-container.bind<User>(USER_SERVICE).to(UserService);
+
+container.bind<HttpService>(HTTP_SERVICE).to(HttpService);
+container.bind<UserService>(USER_SERVICE).to(UserService);
 
 export { container };

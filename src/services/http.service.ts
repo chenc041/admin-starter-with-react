@@ -1,14 +1,13 @@
 import { Observable } from 'rxjs';
 import Axios, { AxiosInstance, AxiosPromise, AxiosRequestConfig, AxiosResponse, CancelTokenSource } from 'axios';
-import { inject, injectable } from 'inversify';
-import { AXIOS_SERVICE } from '../inject-types/inject.types';
+import { injectable } from 'inversify';
 
 /**
  * 将 axios 封装成 rx 格式的基础http 请求库
  */
 @injectable()
 export class HttpService {
-  constructor(@inject(AXIOS_SERVICE) private readonly instance: AxiosInstance = Axios) {}
+  constructor(private readonly instance: AxiosInstance = Axios) {}
 
   request<T = any>(config: AxiosRequestConfig): Observable<AxiosResponse<T>> {
     return this.makeObservable<T>(this.instance.request, config);

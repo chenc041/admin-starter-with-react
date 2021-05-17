@@ -19,7 +19,7 @@ export interface Route {
 
 export const Routes: Route[] = [
   {
-    path: '/home',
+    path: '/',
     exact: true,
     name: '首页',
     icon: HomeOutlined,

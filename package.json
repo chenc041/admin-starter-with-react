@@ -1,7 +1,7 @@
 {
-  "name": "gymbo-backend-template-static",
+  "name": "hello-vite-with-react",
   "version": "1.0.0",
-  "description": "金宝贝后台管理项目, 前端部分模板",
+  "description": "a backend template with vite and react and ts",
   "main": "index.ts",
   "scripts": {
     "dev": "vite",

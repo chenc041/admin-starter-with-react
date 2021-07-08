@@ -10,15 +10,19 @@ const HomePage = () => {
     const sub = userService.getEmojis.subscribe((val) => {
       setEmojis(val);
     });
-    return () => sub.unsubscribe()
-  })
+    return () => sub.unsubscribe();
+  });
+
+  const file = (e: any) => {
+    console.log(e.target.value, 'eeee');
+  };
 
   return (
     <div>
       <p>this is emojis list</p>
-      { Object.keys(emojis).map((item) => (
-        <div key={ item }>{ item }</div>
-      )) }
+      <div>
+        <input type='file' onChange={(e) => file(e)} />
+      </div>
     </div>
   );
 };

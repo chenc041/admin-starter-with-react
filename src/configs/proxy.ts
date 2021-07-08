@@ -1,7 +1,7 @@
 export const Proxy = {
   '/api': {
-    target: 'http://local.gymbo-online.com:7001',
+    target: 'http://47.96.234.234:9090/',
     changeOrigin: true,
-    rewrite: (path: string) => path.replace(/^\/api/, '/api'),
+    rewrite: (path: string) => path.replace(/^\/AppStoreServer/, '/AppStoreServer'),
   },
 };

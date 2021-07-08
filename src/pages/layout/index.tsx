@@ -45,7 +45,7 @@ const LayoutPage = (props: any) => {
           </div>
           <div className={styles.companyName}>chenc</div>
         </div>
-        <Menu theme='dark' mode='inline' className={styles.menuWrap} defaultSelectedKeys={['home']}>
+        <Menu theme='dark' mode='inline' className={styles.menuWrap} defaultSelectedKeys={['/']}>
           {Routes.length > 0 &&
             Routes.map(({ path, icon: PathIcon, name, children }) => {
               return (

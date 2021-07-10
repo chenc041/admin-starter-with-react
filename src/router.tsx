@@ -8,9 +8,9 @@ const RouterApp = () => {
     <BrowserRouter>
       <Layout>
         <Switch>
-          {flatRoutes.map(({ path, component: Component }) => (
-            <Route key={path} path={path}>
-              <Component />
+          {flatRoutes.map(({ path, component: Component, exact }) => (
+            <Route exact={exact} key={path} path={path}>
+              <Component path={path} />
             </Route>
           ))}
         </Switch>

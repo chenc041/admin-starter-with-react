@@ -6,7 +6,7 @@ const { Header, Sider, Content } = Layout;
 import styles from './index.module.less';
 import { Routes } from '../../configs/routes';
 import { container } from '../../inversify.config';
-import { USER_SERVICE } from '../../inject-types/index.types';
+import { USER_SERVICE } from '../../injectTypes/index.types';
 import { UserService } from '../../services/user.service';
 
 const { SubMenu } = Menu;

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { container } from '../../inversify.config';
 import { UserService } from '../../services/user.service';
-import { USER_SERVICE } from '../../inject-types/index.types';
+import { USER_SERVICE } from '../../injectTypes/index.types';
 
 const HomePage = () => {
   const userService = container.get<UserService>(USER_SERVICE);

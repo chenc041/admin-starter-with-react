@@ -13,7 +13,7 @@ export const flatRouter = (routes: Route[], baseUrl = '') => {
       flatArr.push({
         ...route,
         icon: route.icon ?? SettingOutlined,
-        path: `${ baseUrl }${ route.path }`,
+        path: `${baseUrl}${route.path}`,
       });
       if (route.children && route.children.length > 0) {
         flat(route.children, route.path);
@@ -21,6 +21,6 @@ export const flatRouter = (routes: Route[], baseUrl = '') => {
     }
     return flatArr;
   };
-  flat(routes, baseUrl)
+  flat(routes, baseUrl);
   return flatArr;
-}
+};

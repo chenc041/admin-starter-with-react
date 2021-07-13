@@ -12,6 +12,7 @@ export interface Route {
   path: string;
   exact?: boolean;
   name: string;
+  layout?: boolean;
   hideMenu?: boolean;
   icon?: ReactNode;
   component: React.FC<any>;

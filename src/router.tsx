@@ -3,6 +3,8 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { flatRoutes } from './configs/routes';
 import Layout from './pages/layout';
 
+const routes = flatRoutes;
+
 const RouterApp = () => {
   return (
     <BrowserRouter>

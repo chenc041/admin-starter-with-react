@@ -1,24 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import { container } from '../../inversify.config';
-import { UserService } from '../../services/user.service';
-import { USER_SERVICE } from '../../inject-types/index.types';
+import React from 'react';
 
 const HomePage = () => {
-  const userService = container.get<UserService>(USER_SERVICE);
-  const [emojis, setEmojis] = useState({});
-  useEffect(() => {
-    const sub = userService.getEmojis.subscribe((val) => {
-      setEmojis(val);
-    });
-    return () => sub.unsubscribe()
-  })
+  const file = (e: any) => {
+    console.log(e.target.value, 'eeee');
+  };
 
   return (
     <div>
       <p>this is emojis list</p>
-      { Object.keys(emojis).map((item) => (
-        <div key={ item }>{ item }</div>
-      )) }
+      <div>
+        <input type='file' onChange={(e) => file(e)} />
+      </div>
     </div>
   );
 };

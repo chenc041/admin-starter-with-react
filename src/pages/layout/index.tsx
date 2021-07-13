@@ -1,28 +1,14 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { Layout, Menu, Dropdown } from 'antd';
 
 const { Header, Sider, Content } = Layout;
 import styles from './index.module.less';
 import { Routes } from '../../configs/routes';
-import { container } from '../../inversify.config';
-import { USER_SERVICE } from '../../inject-types/index.types';
-import { UserService } from '../../services/user.service';
-
 const { SubMenu } = Menu;
 const defaultUserAvatar = 'https://avatars.githubusercontent.com/u/16097887?v=4';
 
 const LayoutPage = (props: any) => {
-  const userService = container.get<UserService>(USER_SERVICE);
-  const [state, setState] = useState<any>();
-  // 注意点: useEffect 第二个参数, 不能为引用类型, 否则会造成循环调用
-  useEffect(() => {
-    userService.fetchEmojis.subscribe((val) => {
-      userService.setEmojis(val);
-      setState(val);
-    });
-  }, []);
-
   const menu = () => {
     return (
       <Menu>
@@ -34,8 +20,7 @@ const LayoutPage = (props: any) => {
       </Menu>
     );
   };
-  const { children } = props;
-  // @ts-ignore
+  const { children, path } = props;
   return (
     <Layout>
       <Sider className={styles.sideWrap} trigger={null} collapsible collapsed={false}>
@@ -45,14 +30,14 @@ const LayoutPage = (props: any) => {
           </div>
           <div className={styles.companyName}>chenc</div>
         </div>
-        <Menu theme='dark' mode='inline' className={styles.menuWrap} defaultSelectedKeys={['home']}>
+        <Menu theme='dark' mode='inline' className={styles.menuWrap} defaultSelectedKeys={['/']}>
           {Routes.length > 0 &&
             Routes.map(({ path, icon: PathIcon, name, children }) => {
               return (
                 <Fragment key={path}>
                   {(!children || children?.length === 0) && (
                     // @ts-ignore
-                    <Menu.Item key={path} icon={<PathIcon />}>
+                    <Menu.Item key={path} icon={PathIcon ? <PathIcon /> : null}>
                       <Link to={path}>{name}</Link>
                     </Menu.Item>
                   )}

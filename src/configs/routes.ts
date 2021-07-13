@@ -3,6 +3,7 @@
  */
 import React, { ReactNode } from 'react';
 import { HomeOutlined } from '@ant-design/icons';
+import LoginPage from '../pages/login';
 import HomePage from '../pages/home';
 import Detail from '../pages/detail';
 import { flatRouter } from '../utils/utils';
@@ -24,6 +25,12 @@ export const Routes: Route[] = [
     name: '首页',
     icon: HomeOutlined,
     component: HomePage,
+  },
+  {
+    path: '/login',
+    name: '登录',
+    icon: HomeOutlined,
+    component: LoginPage,
   },
   {
     name: '详情',

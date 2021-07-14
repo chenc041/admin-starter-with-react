@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './index.module.less';
 import { Form, Input, Button } from 'antd';
 
 const LoginPage = () => {
@@ -7,30 +8,35 @@ const LoginPage = () => {
   };
 
   const onFinishFailed = (errorInfo: any) => {
-    console.log('Failed:', errorInfo);
+    console.log('Failed: ----', errorInfo);
   };
 
   return (
-    <Form
-      name='用户登录'
-      onFinish={onFinish}
-      labelCol={{ span: 8 }}
-      wrapperCol={{ span: 16 }}
-      initialValues={{ remember: true }}
-      onFinishFailed={onFinishFailed}>
-      <Form.Item label='用户名' name='username' rules={[{ required: true, message: '请输入用户名!' }]}>
-        <Input />
-      </Form.Item>
+    <div className={styles.login}>
+      <div className={styles.formWrap}>
+        <h1 className={styles.loginTitle}>Hello Vite with React</h1>
+        <Form
+          name='用户登录1'
+          onFinish={onFinish}
+          requiredMark={false}
+          className={styles.form}
+          initialValues={{ remember: true }}
+          onFinishFailed={onFinishFailed}>
+          <Form.Item name='username' rules={[{ required: true, message: '请输入用户名!' }]}>
+            <Input placeholder='请输入用户名' />
+          </Form.Item>
 
-      <Form.Item label='密码' name='password' rules={[{ required: true, message: '请输入密码!' }]}>
-        <Input.Password />
-      </Form.Item>
-      <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-        <Button type='primary' htmlType='submit'>
-          登录
-        </Button>
-      </Form.Item>
-    </Form>
+          <Form.Item name='password' rules={[{ required: true, message: '请输入密码!' }]}>
+            <Input.Password placeholder='请输入密码' />
+          </Form.Item>
+          <Form.Item>
+            <Button className={styles.submitBtn} type='primary' htmlType='submit'>
+              登录
+            </Button>
+          </Form.Item>
+        </Form>
+      </div>
+    </div>
   );
 };
 export default LoginPage;

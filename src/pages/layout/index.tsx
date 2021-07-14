@@ -5,6 +5,7 @@ import { Layout, Menu, Dropdown } from 'antd';
 const { Header, Sider, Content } = Layout;
 import styles from './index.module.less';
 import { Routes } from '../../configs/routes';
+
 const { SubMenu } = Menu;
 const defaultUserAvatar = 'https://avatars.githubusercontent.com/u/16097887?v=4';
 
@@ -20,7 +21,7 @@ const LayoutPage = (props: any) => {
       </Menu>
     );
   };
-  const { children, path } = props;
+  const { children } = props;
   return (
     <Layout>
       <Sider className={styles.sideWrap} trigger={null} collapsible collapsed={false}>
@@ -32,10 +33,10 @@ const LayoutPage = (props: any) => {
         </div>
         <Menu theme='dark' mode='inline' className={styles.menuWrap} defaultSelectedKeys={['/']}>
           {Routes.length > 0 &&
-            Routes.map(({ path, icon: PathIcon, name, children }) => {
+            Routes.map(({ path, icon: PathIcon, hideMenu, name, children }) => {
               return (
                 <Fragment key={path}>
-                  {(!children || children?.length === 0) && (
+                  {(!children || children?.length === 0) && !hideMenu && (
                     // @ts-ignore
                     <Menu.Item key={path} icon={PathIcon ? <PathIcon /> : null}>
                       <Link to={path}>{name}</Link>
@@ -44,13 +45,13 @@ const LayoutPage = (props: any) => {
                   {children && children.length > 0 && (
                     // @ts-ignore
                     <SubMenu key={path} title={name} icon={<PathIcon />}>
-                      {children.map(({ path: ChildPath, name: ChildName }) => {
-                        return (
+                      {children.map(({ path: ChildPath, name: ChildName, hideMenu: childHide }) => {
+                        return !childHide ? (
                           // @ts-ignore
                           <Menu.Item key={ChildPath} icon={<PathIcon />}>
                             <Link to={`${path}${ChildPath}`}>{ChildName}</Link>
                           </Menu.Item>
-                        );
+                        ) : null;
                       })}
                     </SubMenu>
                   )}

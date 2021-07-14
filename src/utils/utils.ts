@@ -1,4 +1,5 @@
 import { Route } from '../configs/routes';
+import { cloneDeep } from 'lodash-es';
 import { SettingOutlined } from '@ant-design/icons';
 
 /**
@@ -7,20 +8,29 @@ import { SettingOutlined } from '@ant-design/icons';
  * @param baseUrl
  */
 export const flatRouter = (routes: Route[], baseUrl = '') => {
-  const flatArr: Route[] = [];
-  const flat = (routes: Route[], baseUrl = '') => {
-    for (const route of routes) {
-      flatArr.push({
-        ...route,
-        icon: route.icon ?? SettingOutlined,
-        path: `${baseUrl}${route.path}`,
-      });
+  const copyRoutes = cloneDeep(routes);
+  const hasLayout: Route[] = [];
+  const noLayout: Route[] = [];
+  const flat = (copyRoutes: Route[], baseUrl = '') => {
+    for (const route of copyRoutes) {
+      if (route.layout === false) {
+        noLayout.push({
+          ...route,
+          icon: route.icon ?? SettingOutlined,
+          path: `${baseUrl}${route.path}`,
+        });
+      } else {
+        hasLayout.push({
+          ...route,
+          icon: route.icon ?? SettingOutlined,
+          path: `${baseUrl}${route.path}`,
+        });
+      }
       if (route.children && route.children.length > 0) {
         flat(route.children, route.path);
       }
     }
-    return flatArr;
   };
-  flat(routes, baseUrl);
-  return flatArr;
+  flat(copyRoutes, baseUrl);
+  return { noLayout, hasLayout };
 };

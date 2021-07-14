@@ -6,6 +6,7 @@ import { HomeOutlined } from '@ant-design/icons';
 import LoginPage from '../pages/login';
 import HomePage from '../pages/home';
 import Detail from '../pages/detail';
+import NotFound from '../pages/404';
 import { flatRouter } from '../utils/utils';
 
 export interface Route {
@@ -30,6 +31,8 @@ export const Routes: Route[] = [
   {
     path: '/login',
     name: '登录',
+    hideMenu: true,
+    layout: false,
     icon: HomeOutlined,
     component: LoginPage,
   },
@@ -45,6 +48,13 @@ export const Routes: Route[] = [
         component: Detail,
       },
     ],
+  },
+  {
+    path: '*',
+    name: '404',
+    hideMenu: true,
+    layout: false,
+    component: NotFound,
   },
 ];
 

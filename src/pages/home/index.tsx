@@ -4,7 +4,6 @@ const HomePage = () => {
   const file = (e: any) => {
     console.log(e.target.value, 'eeee');
   };
-
   return (
     <div>
       <p>this is emojis list</p>

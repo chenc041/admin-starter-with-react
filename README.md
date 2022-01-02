@@ -1,6 +1,6 @@
-# hello-vite-with-react
+# hello-admin
 
-a react template with vite
+> A backend project wit react, vite, rxjs etc
 
 ## features
 
@@ -10,3 +10,21 @@ a react template with vite
 - react
 - antd
 - less
+
+### dev
+
+```shell
+yarn dev
+```
+
+### build
+
+```shell
+yarn build
+```
+
+### preview
+
+```shell
+yarn preview
+```

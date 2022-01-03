@@ -1,30 +1,24 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { flatRoutes } from './configs/routes';
 import Layout from './pages/layout';
 
 const { noLayout, hasLayout } = flatRoutes;
 
-console.log(hasLayout, 'hasLayout', noLayout);
-
 const RouterApp = () => {
   return (
-    <BrowserRouter>
-      <Switch>
-        <Layout>
-          {hasLayout.map(({ path, component: Component, exact }) => (
-            <Route exact={exact} key={path} path={path}>
-              <Component path={path} />
-            </Route>
+    <Router>
+      <Routes>
+        <Route path='/' element={<Layout />}>
+          {hasLayout.map(({ path, component: Component }) => (
+            <Route key={path} path={path} element={<Component path={path} />} />
           ))}
-        </Layout>
-        {noLayout.map(({ path, component: Component, exact }) => (
-          <Route exact={exact} key={path} path={path}>
-            <Component path={path} />
-          </Route>
+        </Route>
+        {noLayout.map(({ path, component: Component }) => (
+          <Route key={path} path={path} element={<Component path={path} />} />
         ))}
-      </Switch>
-    </BrowserRouter>
+      </Routes>
+    </Router>
   );
 };
 

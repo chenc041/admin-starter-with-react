@@ -6,10 +6,7 @@ import { map } from 'rxjs/operators';
 
 @injectable()
 export class UserService {
-  constructor(
-    @inject(HTTP_SERVICE)
-    private readonly httpService: HttpService
-  ) {}
+  constructor(@inject(HTTP_SERVICE) private readonly httpService: HttpService) {}
 
   private emojis: Subject<{ [key: string]: any }> = new Subject();
 

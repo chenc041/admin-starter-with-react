@@ -1,16 +1,19 @@
 {
-  "name": "hello-vite-with-react",
+  "name": "hello-admin",
   "version": "1.0.0",
-  "description": "a backend template with vite and react and ts",
+  "description": "An backend template with vite and react and ts",
   "main": "index.ts",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "tsc && vite build",
     "serve": "vite preview",
     "prepare": "husky install",
     "lint": "lint-staged"
   },
-  "author": "chenc",
+  "author": {
+    "name": "chenc",
+    "email": "double_cl@163.com"
+  },
   "license": "UNLICENSED",
   "devDependencies": {
     "@types/lodash-es": "^4.17.5",
@@ -25,6 +28,7 @@
     "less": "^4.1.2",
     "lint-staged": "^12.1.4",
     "prettier": "^2.5.1",
+    "tslib": "^2.3.1",
     "typescript": "^4.5.4",
     "vite": "^2.7.10"
   },
@@ -46,7 +50,7 @@
     }
   },
   "lint-staged": {
-    "*.{js,css,md}": "prettier --write",
-    "*.{tsx,tsx}": "eslint --fix"
+    "*.{tsx,ts,jsx,js,css,less,scss}": "prettier --write",
+    "*.{tsx,ts,jsx,js}": "eslint --fix"
   }
 }

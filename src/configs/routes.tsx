@@ -1,7 +1,7 @@
 /**
  * 路由配置
  */
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { HomeOutlined } from '@ant-design/icons';
 import LoginPage from '../pages/login';
 import HomePage from '../pages/home';
@@ -11,11 +11,10 @@ import { flatRouter } from '../utils/utils';
 
 export interface Route {
   path: string;
-  exact?: boolean;
   name: string;
   layout?: boolean;
   hideMenu?: boolean;
-  icon?: ReactNode;
+  icon?: React.ReactNode;
   component: React.FC<any>;
   children?: Route[];
 }
@@ -23,9 +22,8 @@ export interface Route {
 export const Routes: Route[] = [
   {
     path: '/',
-    exact: true,
     name: '首页',
-    icon: HomeOutlined,
+    icon: <HomeOutlined />,
     component: HomePage,
   },
   {
@@ -33,18 +31,19 @@ export const Routes: Route[] = [
     name: '登录',
     hideMenu: true,
     layout: false,
-    icon: HomeOutlined,
+    icon: <HomeOutlined />,
     component: LoginPage,
   },
   {
     name: '详情',
     path: '/detail',
-    icon: HomeOutlined,
+    icon: <HomeOutlined />,
     component: Detail,
     children: [
       {
         name: '样例',
         path: '/demo',
+        icon: <HomeOutlined />,
         component: Detail,
       },
     ],
@@ -53,7 +52,6 @@ export const Routes: Route[] = [
     path: '*',
     name: '404',
     hideMenu: true,
-    layout: false,
     component: NotFound,
   },
 ];

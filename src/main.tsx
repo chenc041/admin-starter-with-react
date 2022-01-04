@@ -1,6 +1,6 @@
 import React from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
-import { flatRoutes } from './configs/routes';
+import { flatRoutes } from './routes';
 import Layout from './pages/layout';
 
 const { noLayout, hasLayout } = flatRoutes;

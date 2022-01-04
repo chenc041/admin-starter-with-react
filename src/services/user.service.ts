@@ -10,8 +10,8 @@ export class UserService {
 
   private emojis: Subject<{ [key: string]: any }> = new Subject();
 
-  get fetchEmojis(): Observable<{ [key: string]: any }> {
-    return this.httpService.get<{ [key: string]: any }>('https://api.github.com/emojis').pipe(map(({ data }) => data));
+  get fetchEmojis(): Observable<Record<string, any>> {
+    return this.httpService.get<Record<string, any>>('https://api.github.com/emojis').pipe(map(({ data }) => data));
   }
 
   setEmojis(val: { [key: string]: any }) {

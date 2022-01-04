@@ -3,11 +3,11 @@
  */
 import React from 'react';
 import { HomeOutlined } from '@ant-design/icons';
-import LoginPage from '../pages/login';
-import HomePage from '../pages/home';
-import Detail from '../pages/detail';
-import NotFound from '../pages/404';
-import { flatRouter } from '../utils/utils';
+import LoginPage from './pages/login';
+import HomePage from './pages/home';
+import Detail from './pages/detail';
+import NotFound from './pages/404';
+import { flatRouter } from './utils/utils';
 
 export interface Route {
   path: string;

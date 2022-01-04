@@ -1,6 +1,6 @@
 # hello-admin
 
-> A backend project wit react, vite, rxjs etc
+> A backend template wit react, vite, rxjs etc
 
 ## features
 
@@ -10,6 +10,7 @@
 - react
 - antd
 - less
+- react-router-dom@v6
 
 ### dev
 

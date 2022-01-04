@@ -1,4 +1,4 @@
-import { Route } from 'src/configs/routes';
+import { Route } from '../routes';
 import { cloneDeep } from 'lodash-es';
 import { SettingOutlined } from '@ant-design/icons';
 

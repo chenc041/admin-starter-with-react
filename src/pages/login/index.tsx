@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './index.module.less';
+import styles from './index.module.scss';
 import { Form, Input, Button } from 'antd';
 
 const LoginPage = () => {
@@ -21,7 +21,8 @@ const LoginPage = () => {
           requiredMark={false}
           className={styles.form}
           initialValues={{ remember: true }}
-          onFinishFailed={onFinishFailed}>
+          onFinishFailed={onFinishFailed}
+        >
           <Form.Item name='username' rules={[{ required: true, message: '请输入用户名!' }]}>
             <Input placeholder='请输入用户名' />
           </Form.Item>

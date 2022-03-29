@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { flatRoutes } from './routes';
 import Layout from './pages/layout';
 
@@ -7,7 +7,7 @@ const { noLayout, hasLayout } = flatRoutes;
 
 const RouterApp = () => {
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
         <Route path='/' element={<Layout />}>
           {hasLayout.map(({ path, component: Component }) => (
@@ -18,7 +18,7 @@ const RouterApp = () => {
           <Route key={path} path={path} element={<Component path={path} />} />
         ))}
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 };
 

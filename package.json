@@ -35,7 +35,7 @@
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "antd": "^4.19.3",
-    "axios": "^0.26.1",
+    "axios": "^0.27.0",
     "inversify": "^6.0.1",
     "lodash-es": "^4.17.21",
     "react": "^17.0.2",

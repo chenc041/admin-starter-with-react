@@ -1,6 +1,6 @@
 import { inject, injectable } from 'inversify';
-import { HTTP_SERVICE } from '../injectTypes/index.types';
-import { HttpService } from '../services/http.service';
+import { HTTP_SERVICE } from '~/injectTypes/index.types';
+import { HttpService } from '~/services/http.service';
 import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 

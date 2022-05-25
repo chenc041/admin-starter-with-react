@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { Layout, Menu, Dropdown } from 'antd';
 import styles from './index.module.scss';
-import { Routes } from '../../routes';
+import { Routes } from '~/routes';
 
 const { Header, Sider, Content } = Layout;
 

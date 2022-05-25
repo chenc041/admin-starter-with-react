@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
-import Axios, { AxiosInstance, AxiosPromise, AxiosRequestConfig, AxiosResponse, CancelTokenSource } from 'axios';
+import Axios from 'axios';
 import { injectable } from 'inversify';
-
+import type { AxiosInstance, AxiosPromise, AxiosRequestConfig, AxiosResponse, CancelTokenSource } from 'axios';
 /**
  * 将 axios 封装成 rx 格式的基础http 请求库
  */

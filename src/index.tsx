@@ -1,7 +1,9 @@
 import 'reflect-metadata';
 import React from 'react';
-import ReactDOM from 'react-dom';
 import RouterApp from './main';
+import { createRoot } from 'react-dom/client';
 import 'antd/dist/antd.css';
-
-ReactDOM.render(<RouterApp />, document.getElementById('root'));
+const container = document.getElementById('root');
+if (container) {
+  createRoot(container).render(<RouterApp />);
+}

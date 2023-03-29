@@ -1,4 +1,4 @@
-FROM nginx:1.23.3-alpine
+FROM nginx:1.23.4-alpine
 
 LABEL author="double_cl@163.com"
 

@@ -74,8 +74,8 @@ devDependencies:
     specifier: ^2.8.4
     version: 2.8.4
   sass:
-    specifier: ^1.58.3
-    version: 1.58.3
+    specifier: ^1.64.0
+    version: 1.64.0
   tslib:
     specifier: ^2.5.0
     version: 2.5.0
@@ -84,7 +84,7 @@ devDependencies:
     version: 5.0.2
   vite:
     specifier: ^4.1.4
-    version: 4.1.4(@types/node@20.1.7)(sass@1.58.3)
+    version: 4.1.4(@types/node@20.1.7)(sass@1.64.0)
 
 packages:
 
@@ -2916,9 +2916,9 @@ packages:
     dependencies:
       tslib: 2.5.0
 
-  /sass@1.58.3:
-    resolution: {integrity: sha512-Q7RaEtYf6BflYrQ+buPudKR26/lH+10EmO9bBqbmPh/KeLqv8bjpTNqxe71ocONqXq+jYiCbpPUmQMS+JJPk4A==}
-    engines: {node: '>=12.0.0'}
+  /sass@1.64.0:
+    resolution: {integrity: sha512-m7YtAGmQta9uANIUJwXesAJMSncqH+3INc8kdVXs6eV6GUC8Qu2IYKQSN8PRLgiQfpca697G94klm2leYMxSHw==}
+    engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
       chokidar: 3.5.3
@@ -3163,7 +3163,7 @@ packages:
       punycode: 2.3.0
     dev: true
 
-  /vite@4.1.4(@types/node@20.1.7)(sass@1.58.3):
+  /vite@4.1.4(@types/node@20.1.7)(sass@1.64.0):
     resolution: {integrity: sha512-3knk/HsbSTKEin43zHu7jTwYWv81f8kgAL99G5NWBcA1LKvtvcVAC4JjBH1arBunO9kQka+1oGbrMKOjk4ZrBg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -3193,7 +3193,7 @@ packages:
       postcss: 8.4.24
       resolve: 1.22.2
       rollup: 3.26.0
-      sass: 1.58.3
+      sass: 1.64.0
     optionalDependencies:
       fsevents: 2.3.2
     dev: true

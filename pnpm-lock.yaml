@@ -74,8 +74,8 @@ devDependencies:
     specifier: ^2.8.4
     version: 2.8.4
   sass:
-    specifier: ^1.58.3
-    version: 1.58.3
+    specifier: ^1.64.1
+    version: 1.64.1
   tslib:
     specifier: ^2.5.0
     version: 2.5.0
@@ -84,7 +84,7 @@ devDependencies:
     version: 5.0.2
   vite:
     specifier: ^4.4.7
-    version: 4.4.7(@types/node@20.1.7)(sass@1.58.3)
+    version: 4.4.7(@types/node@20.1.7)(sass@1.64.1)
 
 packages:
 
@@ -1806,17 +1806,9 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /has@1.0.3:
-    resolution: {integrity: sha512-f2dvO0VU6Oej7RkWJGrehjbzMAjFp5/VKPp5tTpWIV4JHHZK1/BxbFRtf/siA2SWTe09caDmVtYYzWEIbBS4zw==}
-    engines: {node: '>= 0.4.0'}
-    dependencies:
-      function-bind: 1.1.1
-    dev: true
-
   /human-signals@4.3.1:
     resolution: {integrity: sha512-nZXjEF2nbo7lIw3mgYjItAfgQXog3OjJogSbKa2CQIIvSGWcKgeJnQlNXip6NglNzYH45nSRiEVimMvYL8DDqQ==}
     engines: {node: '>=14.18.0'}
-
     dev: true
 
   /husky@8.0.3:
@@ -2932,9 +2924,9 @@ packages:
     dependencies:
       tslib: 2.5.0
 
-  /sass@1.58.3:
-    resolution: {integrity: sha512-Q7RaEtYf6BflYrQ+buPudKR26/lH+10EmO9bBqbmPh/KeLqv8bjpTNqxe71ocONqXq+jYiCbpPUmQMS+JJPk4A==}
-    engines: {node: '>=12.0.0'}
+  /sass@1.64.1:
+    resolution: {integrity: sha512-16rRACSOFEE8VN7SCgBu1MpYCyN7urj9At898tyzdXFhC+a+yOX5dXwAR7L8/IdPJ1NB8OYoXmD55DM30B2kEQ==}
+    engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
       chokidar: 3.5.3
@@ -3174,7 +3166,7 @@ packages:
       punycode: 2.3.0
     dev: true
 
-  /vite@4.4.7(@types/node@20.1.7)(sass@1.58.3):
+  /vite@4.4.7(@types/node@20.1.7)(sass@1.64.1):
     resolution: {integrity: sha512-6pYf9QJ1mHylfVh39HpuSfMPojPSKVxZvnclX1K1FyZ1PXDOcLBibdq5t1qxJSnL63ca8Wf4zts6mD8u8oc9Fw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -3206,7 +3198,7 @@ packages:
       esbuild: 0.18.16
       postcss: 8.4.27
       rollup: 3.26.0
-      sass: 1.58.3
+      sass: 1.64.1
     optionalDependencies:
       fsevents: 2.3.2
     dev: true

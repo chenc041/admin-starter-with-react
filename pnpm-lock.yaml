@@ -83,6 +83,7 @@ devDependencies:
     specifier: ^5.0.0
     version: 5.0.2
   vite:
+
     specifier: ^5.0.0
     version: 5.1.5(@types/node@20.1.7)(sass@1.64.1)
 
@@ -2988,6 +2989,7 @@ packages:
       glob: 7.2.3
     dev: true
 
+
   /rollup@4.12.1:
     resolution: {integrity: sha512-ggqQKvx/PsB0FaWXhIvVkSWh7a/PCLQAsMjBc+nA2M8Rv2/HG0X6zvixAB7KyZBRtifBUhy5k8voQX/mRnABPg==}
     engines: {node: '>=18.0.0', npm: '>=8.0.0'}
@@ -3242,6 +3244,7 @@ packages:
       punycode: 2.3.0
     dev: true
 
+
   /vite@5.1.5(@types/node@20.1.7)(sass@1.64.1):
     resolution: {integrity: sha512-BdN1xh0Of/oQafhU+FvopafUp6WaYenLU/NFoL5WyJL++GxkNfieKzBhM24H3HVsPQrlAqB7iJYTHabzaRed5Q==}
     engines: {node: ^18.0.0 || >=20.0.0}
@@ -3271,6 +3274,7 @@ packages:
         optional: true
     dependencies:
       '@types/node': 20.1.7
+
       esbuild: 0.19.12
       postcss: 8.4.35
       rollup: 4.12.1

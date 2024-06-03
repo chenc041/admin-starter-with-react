@@ -1,6 +1,6 @@
-# hello-admin
+# admin-starter-with-react
 
-> A backend template wit react, vite, rxjs etc
+> A backend template with react, vite, rxjs etc
 
 ## features
 

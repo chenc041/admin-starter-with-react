@@ -77,7 +77,7 @@ importers:
         version: 3.3.0
       sass:
         specifier: ^1.64.1
-        version: 1.77.4
+        version: 1.77.5
       tslib:
         specifier: ^2.6.1
         version: 2.6.2
@@ -86,7 +86,7 @@ importers:
         version: 5.4.5
       vite:
         specifier: ^5.0.0
-        version: 5.2.12(@types/node@20.12.11)(sass@1.77.4)
+        version: 5.2.12(@types/node@20.12.11)(sass@1.77.5)
 
 packages:
 
@@ -834,15 +834,6 @@ packages:
 
   dayjs@1.11.11:
     resolution: {integrity: sha512-okzr3f11N6WuqYtZSvm+F776mB41wRZMhKP+hc34YdW+KmtYYK9iqvHSwo2k9FEH3fhGXvOPV6yz2IcSrfRUDg==}
-
-  debug@4.3.4:
-    resolution: {integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==}
-    engines: {node: '>=6.0'}
-    peerDependencies:
-      supports-color: '*'
-    peerDependenciesMeta:
-      supports-color:
-        optional: true
 
   debug@4.3.5:
     resolution: {integrity: sha512-pt0bNEmneDIvdL1Xsd9oDQ/wrQRkXDT4AUWlNZNPKvW5x/jyO9VFXkJUP07vQ2upmw5PlaITaPKc31jK13V+jg==}
@@ -1603,8 +1594,8 @@ packages:
   rxjs@7.8.1:
     resolution: {integrity: sha512-AA3TVj+0A2iuIoQkWEK/tqFjBq2j+6PO6Y0zJcvzLAFhEFIO3HL0vls9hWLncZbAAbK0mar7oZ4V079I/qPMxg==}
 
-  sass@1.77.4:
-    resolution: {integrity: sha512-vcF3Ckow6g939GMA4PeU7b2K/9FALXk2KF9J87txdHzXbUF9XRQRwSxcAs/fGaTnJeBFd7UoV22j3lzMLdM0Pw==}
+  sass@1.77.5:
+    resolution: {integrity: sha512-oDfX1mukIlxacPdQqNb6mV2tVCrnE+P3nVYioy72V5tlk56CPNcO4TCuFcaCRKKfJ1M3lH95CleRS+dVKL2qMg==}
     engines: {node: '>=14.0.0'}
     hasBin: true
 
@@ -2578,10 +2569,6 @@ snapshots:
 
   dayjs@1.11.11: {}
 
-  debug@4.3.4:
-    dependencies:
-      ms: 2.1.2
-
   debug@4.3.5:
     dependencies:
       ms: 2.1.2
@@ -3423,7 +3410,7 @@ snapshots:
     dependencies:
       tslib: 2.6.2
 
-  sass@1.77.4:
+  sass@1.77.5:
     dependencies:
       chokidar: 3.6.0
       immutable: 4.3.6
@@ -3533,7 +3520,7 @@ snapshots:
     dependencies:
       punycode: 2.3.1
 
-  vite@5.2.12(@types/node@20.12.11)(sass@1.77.4):
+  vite@5.2.12(@types/node@20.12.11)(sass@1.77.5):
     dependencies:
       esbuild: 0.20.2
       postcss: 8.4.38
@@ -3541,7 +3528,7 @@ snapshots:
     optionalDependencies:
       '@types/node': 20.12.11
       fsevents: 2.3.3
-      sass: 1.77.4
+      sass: 1.77.5
 
   which@2.0.2:
     dependencies:
